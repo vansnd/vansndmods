@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моды</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<button
+    class="theme-toggle"
+    id="themeToggle"
+    type="button"
+    aria-label="Изменить тему"
+>🌙</button>
+    <a href="index.html">Vansnd Mods</a>
+<div class="account-menu" id="accountMenu">
+    <a href="auth.html" class="account-login" id="loginLink">
+        Войти
+    </a>
+
+    <button class="account-button" id="accountButton" hidden>
+        <span id="accountNickname">Мой аккаунт</span>
+        <span>⌄</span>
+    </button>
+
+    <div class="account-dropdown" id="accountDropdown">
+        <div class="account-dropdown-nickname" id="dropdownNickname">
+            Мой аккаунт
+        </div>
+
+        <a href="profile.html">Личный кабинет</a>
+        <button id="logoutButton">Выйти</button>
+    </div>
+</div>
+</header>
+<main>
+    
+    <div class="info">
+        <h1>Моды</h1>
+    </div>
+    <div class="cards">
+    <div class="card">
+        <div class="card-content">
+        <button
+            class="favorite-toggle"
+            data-mod-name="Super Green Craft"
+            data-mod-url="mods/SuperGreenCraft-v.1.2.0.jar"
+            type="button"
+            aria-label="Добавить в избранное"
+        >☆</button>
+        <h2>🟩Super Green Craft</h2>
+        <p>Мод добавляет в игру: новый биом, босса, инструменты, руду и уникальные предметы. В игре появляется новый босс. Убив его вы получаете: Ухо зелёного крипера, с помощью которого вы можете скрафтить инструменты и броню</p>
+        <p>Minecraft (forge 1.16.5)</p>
+        <a href="mods/SuperGreenCraft-v.1.2.0.jar"
+        class="download-mod"
+        data-mod-name="Super Green Craft">Скачать 0,184 МБ</a>
+
+    </div>
+    </div>
+    <div class="card">
+        <div class="card-content">
+            <button
+            class="favorite-toggle"
+            data-mod-name="NeighborHello"
+            data-mod-url="https://www.moddb.com/mods/neighbor-hello/downloads/neighbor-hello"
+            type="button"
+            aria-label="Добавить в избранное"
+        >☆</button>
+        <h2>☀️NeighborHello</h2>
+        <p>Вы и ваш сосед в игре Hello Neighbor меняетесь домами</p>
+        <p>Hello Neighbor Mod Kit</p>
+        <a href="https://www.moddb.com/mods/neighbor-hello/downloads/neighbor-hello"
+        class="download-mod"
+        data-mod-name="NeighborHello">Скачать 35,17 МБ</a>
+    </div>
+    </div> 
+    <div class="card">
+        <div class="card-content">
+            <button
+            class="favorite-toggle"
+            data-mod-name="Super Village Trade"
+            data-mod-url="mods/super_village_trade-1.0.1-fabric-1.21.8.jar"
+            type="button"
+            aria-label="Добавить в избранное"
+        >☆</button>
+        <h2>👃Super Village Trade</h2>
+        <p>Мод который добавляет суперские трейды жителей.</p>
+        <p>Minecraft (fabric 1.21.8)</p>
+        <a href="mods/super_village_trade-1.0.1-fabric-1.21.8.jar"
+        class="download-mod"
+        data-mod-name="Super Village Trade">Скачать 0,063 МБ</a>
+    </div>
+    </div>
+</div>
+<div class="disclamer">
+    <h2>Моды предоставлены не для комерции</h2>
+</div>
+<div class="disclamer">
+    <h2>Моды предоставлены для личного использования</h2>
+</div>
+<div class="disclamer">
+    <h2>Распространение без согласия автора запрешено</h2>
+</div>
+<div class="disclamer">
+    <h2>Моды очень интересные</h2>
+</div>
+</main>
+<footer>
+    <h3>Связь: dima2131shuvalov@yandex.ru</h3>
+    <a href="https://steamcommunity.com/profiles/76561198633751481">Steam</a>
+    <center>©Vansnd, 2026</center>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+<script src="favorites.js"></script>
+</body>
+</html>

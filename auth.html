@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аккаунт — Vansnd Mods</title>
+    <link rel="stylesheet" href="auth.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="auth.js" defer></script>
+</head>
+<body>
+
+<main class="auth-container">
+    <a href="index.html" class="logo">Vansnd Mods</a>
+
+    <h1 id="formTitle">Вход</h1>
+    <p class="subtitle">Твой игровой мир модов</p>
+
+    <div class="tabs">
+        <button type="button" id="loginTab" class="active">Вход</button>
+        <button type="button" id="registerTab">Регистрация</button>
+    </div>
+
+    <form id="authForm">
+        <label for="nickname">Email / Никнейм</label>
+        <input
+            id="nickname"
+            type="text"
+            placeholder="Например, Player123"
+            minlength="3"
+            maxlength="20"
+            pattern="[A-Za-z0-9_-]{3,20}"
+            autocomplete="username"
+            required
+        >
+
+        <div id="emailBlock" hidden>
+            <label for="email">Электронная почта</label>
+            <input
+                id="email"
+                type="email"
+                placeholder="name@example.com"
+                autocomplete="email"
+            >
+        </div>
+
+        <label for="password">Пароль</label>
+        <input
+            id="password"
+            type="password"
+            placeholder="Минимум 8 символов"
+            minlength="8"
+            autocomplete="current-password"
+            required
+        >
+
+        <div id="repeatBlock" hidden>
+            <label for="repeatPassword">Повтори пароль</label>
+            <input
+                id="repeatPassword"
+                type="password"
+                placeholder="Повтори пароль"
+                minlength="8"
+                autocomplete="new-password"
+            >
+        </div>
+
+        <button type="submit" id="submitButton">Войти</button>
+        <p id="message" role="status"></p>
+    </form>
+
+    <a href="index.html" class="back-link">← На главную</a>
+</main>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<button
+    class="theme-toggle"
+    id="themeToggle"
+    type="button"
+    aria-label="Изменить тему"
+>🌙</button>
+    <a href="index.html">Vansnd Mods</a>
+<div class="account-menu" id="accountMenu">
+    <a href="auth.html" class="account-login" id="loginLink">
+        Войти
+    </a>
+
+    <button class="account-button" id="accountButton" hidden>
+        <span id="accountNickname">Мой аккаунт</span>
+        <span>⌄</span>
+    </button>
+
+    <div class="account-dropdown" id="accountDropdown">
+        <div class="account-dropdown-nickname" id="dropdownNickname">
+            Мой аккаунт
+        </div>
+
+        <a href="profile.html">Личный кабинет</a>
+        <button id="logoutButton">Выйти</button>
+    </div>
+</div>
+</header>
+<main>
+    <div class="info">
+        <h1>Каталог сайта</h1>
+    </div>
+    <div class="cards">
+    <div class="card">
+        <img src="img/modslogo.jfif" alt="modslogo" >
+        <div class="card-content">
+        <h2>Моды</h2>
+        <p>Скачать моды</p>
+        <a href="mods.html">Открыть</a>
+    </div>
+    </div>
+    <div class="card">
+        <img src="img/modsnewslogo.jfif" alt="modsnewslogo" >
+        <div class="card-content">
+        <h2>Новости модов</h2>
+        <p>Читайте новости модов</p>
+        <a href="news.html">Открыть</a>
+    </div>
+    </div>
+    <div class="card">
+        <img src="img/9295a746-d2fc-47e4-851f-addfcaa4ca4b.jfif" alt="newmods logo" >
+        <div class="card-content">
+        <h2>Новые моды</h2>
+        <p>Читайте о новых модах</p>
+        <a href="newmods.html">Открыть</a>
+    </div>
+    </div> 
+</div>
+<div class="opisanie">
+    <h2>Качай моды бесплатно</h2>
+</div>
+<div class="disclamer">
+    <h1>3 мода</h1>
+</div>
+<div class="disclamer">
+    <h1>Скачиваний: <span id="totalDownloads">Загрузка...</span></h1>
+</div>
+<div class="disclamer">
+    <h1>2025 год основания</h1>
+</div>
+<div class="disclamer">
+    <h1>Обновления - есть</h1>
+</div>
+<div class="disclamer">
+    <h1>Какие моды выйдут можно посмотреть на странице новых модов</h1>
+</div>
+</main>
+<footer>
+    <h3>Связь: dima2131shuvalov@yandex.ru</h3>
+    <a href="https://steamcommunity.com/profiles/76561198633751481">Steam</a>
+    <center>©Vansnd, 2026</center>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+<script src="theme.js"></script>
+</body>
+</html>

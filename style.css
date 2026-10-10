@@ -1,0 +1,1090 @@
+
+/* ========================================
+   1. ОСНОВА САЙТА
+======================================== */
+
+:root {
+    --bg: #11141b;
+    --header: #1a1f2a;
+    --card: #1c222e;
+    --card-hover: #242c3a;
+    --input-bg: #151a23;
+    --border: #303849;
+    --text: #e8edf5;
+    --muted: #c4ccda;
+    --muted-light: #9ba7ba;
+    --accent: #42d6c4;
+    --accent-dark: #168f88;
+    --accent-hover: #20b5a7;
+    --danger: #ff8585;
+    --danger-bg: #352630;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    color: #f3f6fc;
+    line-height: 1.3;
+}
+
+p {
+    color: var(--muted);
+}
+
+::selection {
+    background: var(--accent-dark);
+    color: #ffffff;
+}
+
+
+/* ========================================
+   2. ШАПКА САЙТА
+======================================== */
+
+header {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 5%;
+    background: var(--header);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+header a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 33px;
+}
+
+header a:hover {
+    color: #8ff8eb;
+}
+
+header > a:first-child {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    font-size: 17px;
+}
+
+header nav a:hover {
+    color: #8ff8eb;
+}
+
+
+/* ========================================
+   3. ОСНОВНОЙ КОНТЕНТ
+======================================== */
+
+main {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 28px 24px;
+}
+
+main > h1,
+main > h2 {
+    text-align: center;
+}
+
+h2 {
+    display: block;
+    margin-top: 0;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   4. ГЛАВНЫЙ ЭКРАН
+======================================== */
+
+.hero {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 12px;
+    font-size: clamp(28px, 4vw, 42px);
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+
+/* ========================================
+   5. КАРТОЧКИ МОДОВ
+======================================== */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    max-width: 100%;
+    padding: 16px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-dark);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    margin: 10px 0;
+    font-size: 21px;
+}
+
+.card p {
+    margin: 8px 0 16px;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 11px;
+    background: #252c39;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 12px 2px 2px;
+}
+
+.card a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 11px 16px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: var(--accent-dark);
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.card a:hover {
+    background: var(--accent-hover);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   6. ИЗБРАННОЕ
+======================================== */
+
+.favorite-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid #414b5d;
+    border-radius: 9px;
+    background: #252c39;
+    color: var(--text);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.favorite-button:hover {
+    border-color: var(--accent);
+    background: var(--card-hover);
+}
+
+.favorite-button.active {
+    color: #ff8585;
+    border-color: #78404a;
+    background: #352630;
+}
+
+.favorites-empty {
+    padding: 35px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-align: center;
+}
+
+.favorites-empty p {
+    margin-bottom: 18px;
+}
+
+
+/* ========================================
+   7. ИНФОРМАЦИОННЫЕ БЛОКИ
+======================================== */
+
+.info,
+.opisanie,
+.disclamer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    min-height: 100px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.info p,
+.opisanie p,
+.disclamer p {
+    margin: 0;
+}
+
+.no {
+    display: inline-block;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 9px;
+    background: var(--accent-dark);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.no:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.date {
+    padding-top: 10px;
+    color: var(--muted-light);
+}
+
+
+/* ========================================
+   8. ОБЩИЕ КНОПКИ
+======================================== */
+
+.primary-button,
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 9px;
+    background: var(--accent-dark);
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.primary-button:hover,
+.button:hover {
+    background: var(--accent-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   9. СЧЁТЧИК СКАЧИВАНИЙ
+======================================== */
+
+.total-downloads {
+    padding: 25px 15px;
+    color: var(--muted);
+    text-align: center;
+}
+
+#totalDownloads {
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+/* ========================================
+   10. ПОДВАЛ
+======================================== */
+
+footer {
+    margin-top: 35px;
+    padding: 25px 5%;
+    background: var(--header);
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+footer a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 16px;
+    border-radius: 9px;
+    background: var(--accent-dark);
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+footer h3,
+footer center {
+    color: var(--muted);
+}
+
+
+/* ========================================
+   11. МЕНЮ АККАУНТА
+======================================== */
+
+.account-menu {
+    position: relative;
+    z-index: 200;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.account-login,
+.account-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border: 1px solid #3d4b60;
+    border-radius: 11px;
+    background: #252d3b;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.account-login:hover,
+.account-button:hover {
+    background: #303b4c;
+    border-color: var(--accent);
+    color: #ffffff;
+}
+
+.account-button[hidden],
+.account-login[hidden] {
+    display: none !important;
+}
+
+.account-button:not([hidden]) {
+    display: inline-flex;
+    max-width: 240px;
+}
+
+#accountNickname {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.account-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    width: 220px;
+    max-width: calc(100vw - 24px);
+    margin-top: 8px;
+    padding: 7px;
+    background: #202735;
+    border: 1px solid #39465a;
+    border-radius: 13px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+}
+
+.account-menu:hover .account-dropdown,
+.account-menu:focus-within .account-dropdown {
+    display: block;
+}
+
+.account-dropdown-nickname {
+    margin-bottom: 5px;
+    padding: 12px;
+    border-bottom: 1px solid #39465a;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.account-dropdown a,
+.account-dropdown button {
+    display: block;
+    width: 100%;
+    margin: 2px 0;
+    padding: 11px 12px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text);
+    font-size: 14px;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.account-dropdown a:hover,
+.account-dropdown button:hover {
+    background: #303b4c;
+    color: #ffffff;
+}
+
+.account-dropdown button {
+    color: var(--danger);
+}
+
+.account-dropdown button:hover {
+    background: #402a32;
+    color: #ffaaaa;
+}
+
+
+/* ========================================
+   12. ЛИЧНЫЙ КАБИНЕТ
+======================================== */
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 35px 16px;
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 460px;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.profile-card .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 18px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: #252c39;
+    font-size: 38px;
+}
+
+.profile-card h1 {
+    margin: 0 0 10px;
+    font-size: 28px;
+}
+
+.profile-card .subtitle {
+    margin-bottom: 25px;
+    color: var(--muted-light);
+}
+
+.profile-card .info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 14px 0;
+    padding: 14px;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.profile-card .info-block span {
+    color: var(--muted-light);
+    font-size: 13px;
+}
+
+.profile-card .info-block strong {
+    color: var(--accent);
+    font-size: 16px;
+}
+
+.profile-card .favorites-button,
+.profile-card .logout-button {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+
+.profile-card .favorites-button {
+    background: var(--accent-dark);
+    color: #ffffff;
+}
+
+.profile-card .favorites-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.profile-card .logout-button {
+    background: var(--danger-bg);
+    color: #ffaaaa;
+    border-color: #573641;
+}
+
+.profile-card .logout-button:hover {
+    background: #49303a;
+    transform: translateY(-2px);
+}
+
+.profile-card #message {
+    color: #ffaaaa;
+    overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   13. ЗАГОТОВКА ДЛЯ ПЕРЕКЛЮЧАТЕЛЯ ТЕМЫ
+======================================== */
+
+/* Сам переключатель и сохранение темы
+   подключим отдельным шагом через JavaScript. */
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid #3d4b60;
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+}
+
+
+/* ========================================
+   14. ФОКУС И ДОСТУПНОСТЬ
+======================================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   15. АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ
+======================================== */
+
+@media (max-width: 600px) {
+    header {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    header > a:first-child {
+        font-size: 25px;
+    }
+
+    header nav {
+        gap: 12px;
+    }
+
+    header nav a {
+        font-size: 15px;
+    }
+
+    main {
+        padding: 20px 14px;
+    }
+
+    .cards {
+        gap: 16px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .account-button:not([hidden]) {
+        max-width: 190px;
+    }
+
+    #accountNickname {
+        max-width: 130px;
+    }
+
+    .profile-container {
+        padding: 20px 10px;
+    }
+
+    .profile-card {
+        padding: 22px 17px;
+    }
+
+    .profile-card h1 {
+        font-size: 24px;
+    }
+}
+
+
+/* ========================================
+   16. СВЕТЛАЯ ТЕМА
+======================================== */
+
+body.light-theme {
+    --bg: #f1f5f9;
+    --header: #ffffff;
+    --card: #ffffff;
+    --card-hover: #f0f7f8;
+    --input-bg: #f8fafc;
+    --border: #d5dee8;
+    --text: #1e293b;
+    --muted: #475569;
+    --muted-light: #64748b;
+    --accent: #087f75;
+    --accent-dark: #087f75;
+    --accent-hover: #0a9488;
+    --danger: #b42335;
+    --danger-bg: #fff0f1;
+    --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3 {
+    color: #172033;
+}
+
+body.light-theme .account-login,
+body.light-theme .account-button {
+    background: #f1f5f9;
+    color: #1e293b;
+    border-color: #cbd5e1;
+}
+
+body.light-theme .account-dropdown {
+    background: #ffffff;
+    border-color: #d5dee8;
+}
+
+body.light-theme .account-dropdown a,
+body.light-theme .account-dropdown button {
+    color: #1e293b;
+}
+
+body.light-theme .account-dropdown a:hover,
+body.light-theme .account-dropdown button:hover {
+    background: #edf2f7;
+}
+
+body.light-theme .card a,
+body.light-theme .no,
+body.light-theme .primary-button,
+body.light-theme .button,
+body.light-theme .profile-card .favorites-button,
+body.light-theme footer a {
+    color: #ffffff;
+}
+
+/* История скачиваний */
+
+.download-history {
+    margin-top: 28px;
+    text-align: left;
+}
+
+.download-history h2 {
+    font-size: 20px;
+}
+
+.history-item {
+    margin: 12px 0;
+    padding: 14px;
+    background: var(--input-bg, #151a23);
+    border: 1px solid var(--border, #303849);
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.history-item strong {
+    color: var(--accent, #42d6c4);
+}
+
+.history-item p {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+.history-item a {
+    display: inline-block;
+    margin-top: 6px;
+}
+
+.favorite-toggle {
+    cursor: pointer;
+    border: 1px solid var(--border-color, #444);
+    border-radius: 8px;
+    padding: 7px 12px;
+    margin-bottom: 12px;
+    background: var(--card-bg, #252525);
+    color: inherit;
+    font-size: 18px;
+}
+
+.favorite-toggle.is-favorite {
+    color: #ffc83d;
+}
+
+#favoritesList {
+    display: grid;
+    gap: 16px;
+}
+
+#favoritesList .card {
+    width: 100%;
+}
+
+/* =========================
+   СВЕТЛАЯ ТЕМА
+========================= */
+
+body.light-theme {
+    --bg: #f2f5f9;
+    --header: #ffffff;
+    --card: #ffffff;
+    --card-hover: #eaf0f7;
+    --input-bg: #f7f9fc;
+    --border: #d5deea;
+    --text: #202938;
+    --muted: #4c596b;
+    --muted-light: #66758a;
+    --accent: #087f75;
+    --accent-dark: #087f75;
+    --accent-hover: #06665f;
+    --danger: #c62828;
+    --danger-bg: #ffebee;
+    --shadow: 0 8px 24px rgba(30, 50, 80, 0.10);
+
+    color: var(--text);
+    background: var(--bg);
+}
+
+/* Основные блоки */
+
+body.light-theme,
+body.light-theme main,
+body.light-theme .profile-container {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+body.light-theme header,
+body.light-theme .header,
+body.light-theme .account-dropdown {
+    background-color: var(--header);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.light-theme .card,
+body.light-theme .profile-card,
+body.light-theme .info-block,
+body.light-theme .download-history,
+body.light-theme .history-item {
+    background-color: var(--card);
+    color: var(--text);
+    border-color: var(--border);
+    box-shadow: var(--shadow);
+}
+
+/* Текст */
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme p,
+body.light-theme label,
+body.light-theme strong,
+body.light-theme span {
+    color: var(--text);
+}
+
+body.light-theme .subtitle,
+body.light-theme .muted {
+    color: var(--muted-light);
+}
+
+/* Поля ввода */
+
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select {
+    background-color: var(--input-bg);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder {
+    color: var(--muted-light);
+}
+
+/* Кнопки */
+
+body.light-theme button,
+body.light-theme .theme-toggle {
+    border-color: var(--border);
+}
+
+body.light-theme .theme-toggle {
+    background-color: var(--card);
+    color: var(--text);
+}
+
+body.light-theme .theme-toggle:hover {
+    background-color: var(--card-hover);
+}
+
+/* Ссылки */
+
+body.light-theme a {
+    color: var(--accent);
+}
+
+body.light-theme .download-mod,
+body.light-theme #submitButton {
+    background-color: var(--accent-dark);
+    color: #ffffff;
+}
+
+body.light-theme .download-mod:hover,
+body.light-theme #submitButton:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Избранное */
+
+body.light-theme .favorite-toggle,
+body.light-theme .favorite-button {
+    background-color: var(--card);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.light-theme .favorite-toggle.is-favorite,
+body.light-theme .favorite-button.active {
+    color: #b77900;
+}
+
+/* Меню аккаунта */
+
+body.light-theme .account-button,
+body.light-theme .account-login {
+    background-color: var(--card);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.light-theme .account-dropdown a {
+    color: var(--text);
+}
+
+body.light-theme .account-dropdown a:hover {
+    background-color: var(--card-hover);
+}
+
+/* Плавное переключение */
+
+body,
+body header,
+body .card,
+body .profile-card,
+body .info-block,
+body .download-history,
+body .history-item,
+body input,
+body textarea,
+body select,
+body button {
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Мобильная версия */
+
+@media (max-width: 600px) {
+    .theme-toggle {
+        max-width: 100%;
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--card);
+    color: var(--text);
+    font-size: 21px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}

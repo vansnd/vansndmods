@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет — Vansnd Mods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <button
+    class="theme-toggle"
+    id="themeToggle"
+    type="button"
+    aria-label="Изменить тему"
+>🌙</button>
+        <a href="index.html" class="logo">Vansnd Mods</a>
+        <a href="index.html" class="back-link">← На главную</a>
+    </header>
+
+    <main class="profile-container">
+        <section class="profile-card">
+            <div class="avatar">👤</div>
+
+            <h1>Личный кабинет</h1>
+            <p class="subtitle">Информация о твоём аккаунте</p>
+
+            <div class="info-block">
+                <span>Никнейм</span>
+                <strong id="profileNickname">Загрузка...</strong>
+            </div>
+
+            <div class="info-block">
+                <span>Email</span>
+                <strong id="profileEmail">Загрузка...</strong>
+            </div>
+
+            <a href="favorites.html" class="favorites-button">
+                ⭐ Моё избранное
+            </a>
+
+            <div class="download-history">
+            <h2>📥 История скачиваний</h2>
+            <div id="downloadHistory">
+            <p>Загрузка истории...</p>
+    </div>
+</div>
+
+            <button id="logoutButton" class="logout-button">
+                Выйти из аккаунта
+            </button>
+
+<button id="deleteAccountButton" class="logout-button" type="button">
+    🗑️ Удалить аккаунт
+</button>
+
+            <p id="message" role="status"></p>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
