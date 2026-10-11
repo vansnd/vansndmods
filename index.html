@@ -93,8 +93,32 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
 <script src="theme.js"></script>
-<!-- Cloudflare Web Analytics -->
-<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "96ac7f78365a4c44a7dc064252497a84"}'></script>
-<!-- End Cloudflare Web Analytics -->
+<script>
+  const SUPABASE_URL = "ВСТАВЬ_PROJECT_URL";
+  const SUPABASE_KEY = "ВСТАВЬ_PUBLISHABLE_KEY";
+
+  const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+  async function countVisit() {
+    try {
+      const { error } = await supabaseClient
+        .from("site_visits")
+        .insert({
+          page_path: window.location.pathname
+        });
+
+      if (error) {
+        console.error("Ошибка записи посещения:", error.message);
+      }
+    } catch (error) {
+      console.error("Не удалось записать посещение:", error);
+    }
+  }
+
+  countVisit();
+</script>
 </body>
 </html>
