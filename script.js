@@ -71,7 +71,7 @@ document.querySelectorAll(".download-mod").forEach(link => {
             link.closest(".card")
                 ?.querySelector("h2")
                 ?.textContent.trim() ||
-            "Неизвестный мод";
+            "Не удалось найти мод";
 
         try {
             // Увеличиваем общий счётчик
